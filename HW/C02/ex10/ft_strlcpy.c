@@ -1,18 +1,32 @@
 #include <stdio.h>
+#include <string.h>
 
 unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
 {
+    unsigned int src_len = strlen(src);
+    unsigned int i = 0 ;
 
-
-    
+    if (size == 0)
+    {
+        return src_len;
+    }
+    while (i < size-1 && src[i])
+    {
+        dest[i] = src[i];
+        i++;
+    }
+    dest[i] = '\0';
+    return src_len;
 }
 
-int main() {
-    char str1[] = "heLloWoRlD";
-    char str2[] = "Salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
-    
-    printf("%s\n", ft_strlcpy(str1)); // "Hello World"
-    printf("%s\n", ft_strlcpy(str2)); // "Salut, Comment Tu Vas ? 42mots Quarante-Deux; Cinquante+Et+Un"
-    
+int main() 
+{
+    char dest[50] = "";
+    char *src1 = "bangkok";
+    char *src2 = "Good";
+    printf("%s\n",dest);
+    ft_strlcpy(dest,src1,strlen(src1)+1);    
+    ft_strlcpy(dest,src2,strlen(src2)+1);   
+    printf("%s\n",dest);
     return 0;
 }

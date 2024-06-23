@@ -6,8 +6,7 @@ char *ft_strcapitalize(char *str) {
     // Flag to track if the current character is the start of a word
     int word_start = 1; 
 
-    while (str[i] != '\0') {
-        if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) {
+    while (str[i] != '\0') {        
             if (word_start) // Capitalize the first character of the word
             {
                 if (str[i] >= 'a' && str[i] <= 'z')
@@ -15,18 +14,19 @@ char *ft_strcapitalize(char *str) {
                     str[i] -= 32 ;
                     word_start = 0;
                 } 
-                else if (str[i] >= 'A' && str[i] <= 'Z')
-                {
-                    str[i] += 0 ;
+                else if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= '0' && str[i] <= '9'))
+                {                    
                     word_start = 0;
-                }        
-            } else if (str[i] >= 'A' && str[i] <= 'Z')
+                }         
+            } 
+            else if (str[i] >= 'A' && str[i] <= 'Z')
             {
                 str[i] += 32 ;                
-            }
-        } else {
-            word_start = 1; 
-        }
+            } 
+            if (str[i] == ' '|| (str[i] == '+' || str[i] == '-'))
+            {
+                word_start = 1;                
+            }  
         i++; 
     }
     return str;
