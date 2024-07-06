@@ -5,11 +5,10 @@ unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
     unsigned int dest_len = strlen(dest);
     unsigned int src_len = strlen(src);
     unsigned int total_len = dest_len + src_len;
-
+    printf("size %u \n",size);
     // Determine available space in dest
-    if (size <= dest_len) {
-        // If size is <= dest_len, return size + src_len
-        return size + src_len;
+    if (size < total_len) {        
+        return total_len;
     } else {
         // Copy at most (size - dest_len - 1) bytes from src to dest
         size_t i = dest_len;
