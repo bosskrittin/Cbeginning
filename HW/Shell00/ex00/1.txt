@@ -1,0 +1,15 @@
+1.Open ubuntu
+2.root@Boss-PC:/mnt/c/Users/Boss/Desktop# mkdir ex00 
+##create directory ex00##
+3.cd ex00/
+##go in folder exoo##
+4.touch z
+##create file z##
+5.echo -e "Z\n" > z
+##create text file "z" + new line and write "Z" in text file##
+6.cat z
+##command show Z ##
+
+>cat z
+Z
+>

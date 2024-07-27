@@ -1,0 +1,15 @@
+1.mkdir ex01 
+2.touch testShell00
+2.chmod -c 0455 testShell00
+3.tar -cf testShell00.tar testShell00
+
+
+“-r--r-xr-x ” แบ่งเป็น -| r-- | r-x | r-x
+0445
+
+
+krittint@KTsupport:/mnt/c/Users/Boss/Desktop/ex01$ chmod -c 0455 testShell00
+mode of 'testShell00' changed from 0555 (r-xr-xr-x) to 0455 (r--r-xr-x)
+krittint@KTsupport:/mnt/c/Users/Boss/Desktop/ex01$ ls -l
+total 0
+-r-xr-xr-x 1 krittint krittint 0 May 19 14:03 testShell00
